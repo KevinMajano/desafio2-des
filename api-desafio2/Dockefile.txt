@@ -1,0 +1,10 @@
+FROM python:3.11
+
+COPY ./app /app
+
+WORKDIR /app
+
+RUN pip install uvicorn fastapi
+RUN pip install  sqlalchemy psycopg2-binary
+
+CMD ["uvicorn", "main:app"]
